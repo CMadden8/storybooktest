@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import {TranslateService} from '@ngx-translate/core';
 
@@ -6,7 +7,7 @@ import {TranslateService} from '@ngx-translate/core';
   standalone: true,
   selector: 'app-root',
   templateUrl: './app-root.component.html',
-  imports: [TranslateModule]
+  imports: [TranslateModule, RouterModule]
 })
 export class AppRootComponent {
   constructor(translate: TranslateService) {

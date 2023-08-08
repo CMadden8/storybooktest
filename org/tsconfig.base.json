@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@org/my-app/ui": ["libs/my-app/ui/src/index.ts"],
       "@org/translations-shared": ["libs/translations-shared/src/index.ts"],
       "@org/ui-shared/ui": ["libs/ui-shared/ui/src/index.ts"]
     }
