@@ -6,5 +6,4 @@ import { BrowserModule } from '@angular/platform-browser';
     BrowserModule,
   ],
 })
-export class BootstrapModule {
-}
+export class BootstrapModule {}
