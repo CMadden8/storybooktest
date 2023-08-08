@@ -26,8 +26,13 @@
         "assets": [
           {
             "glob": "**/*",
+            "input": "apps/my-app/src/assets/il8n/",
+            "output": "./assets/standard-translations"
+          },
+          {
+            "glob": "**/*",
             "input": "libs/translations-shared/src/lib/assets/il8n/",
-            "output": "./assets/i18n/shared"
+            "output": "./assets/shared-translations"
           }
         ]
       },
@@ -48,8 +53,13 @@
         "assets": [
           {
             "glob": "**/*",
+            "input": "apps/my-app/src/assets/il8n/",
+            "output": "./assets/standard-translations"
+          },
+          {
+            "glob": "**/*",
             "input": "libs/translations-shared/src/lib/assets/il8n/",
-            "output": "./assets/i18n/shared"
+            "output": "./assets/shared-translations"
           }
         ]
       },

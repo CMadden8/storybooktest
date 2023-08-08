@@ -5,8 +5,8 @@ import { MultiTranslateHttpLoader } from "ngx-translate-multi-http-loader";
 
 function HttpLoaderFactory(httpBackend: HttpBackend) {
   return new MultiTranslateHttpLoader(httpBackend, [
-    './assets/il8n/',
-    './assets/i18n/shared/',
+    './assets/standard-translations/',
+    './assets/shared-translations/',
   ]);
 }
 
@@ -23,7 +23,7 @@ export class StorybookTranslateModule {
   constructor(translateService: TranslateService) {
     console.log("Configuring the translation service: ", translateService);
     console.log("Translations: ", translateService.translations);
-    translateService.setDefaultLang("en-US");
-    translateService.use("en-US");
+    translateService.setDefaultLang("en");
+    translateService.use("en");
   }
 }
