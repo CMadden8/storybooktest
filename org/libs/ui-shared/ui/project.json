@@ -1,0 +1,20 @@
+{
+  "name": "ui-shared-ui",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/ui-shared/ui/src",
+  "prefix": "org",
+  "tags": [],
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/ui-shared/ui/**/*.ts",
+          "libs/ui-shared/ui/**/*.html"
+        ]
+      }
+    }
+  }
+}
