@@ -15,7 +15,15 @@
         "main": "apps/my-app/src/main.ts",
         "polyfills": ["zone.js"],
         "tsConfig": "apps/my-app/tsconfig.app.json",
-        "assets": ["apps/my-app/src/favicon.ico", "apps/my-app/src/assets"],
+        "assets": [
+          "apps/my-app/src/favicon.ico", 
+          "apps/my-app/src/assets",
+          {
+            "glob": "**/*",
+            "input": "./libs/translations-shared/src/lib/assets/il8n/",
+            "output": "./assets/i18n/shared"
+          }
+        ],
         "styles": ["apps/my-app/src/styles.less"],
         "scripts": []
       },
