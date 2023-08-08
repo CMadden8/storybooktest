@@ -4,8 +4,7 @@ import { UiComponent } from './ui.component';
 import { within } from '@storybook/testing-library';
 import { expect } from '@storybook/jest';
 import { importProvidersFrom } from '@angular/core';
-import { BootstrapModule } from '@org/ui-shared/ui';
-import { TranslateModule } from '@ngx-translate/core';
+import { BootstrapModule, StorybookTranslateModule } from '@org/ui-shared/ui';
 import { CommonModule } from '@angular/common';
 
 const meta: Meta<UiComponent> = {
@@ -13,7 +12,7 @@ const meta: Meta<UiComponent> = {
   title: 'UiComponent',
   decorators: [
     moduleMetadata({
-      imports: [CommonModule, TranslateModule],
+      imports: [CommonModule, StorybookTranslateModule],
     }),
     applicationConfig({
       providers: [importProvidersFrom([BootstrapModule])],
