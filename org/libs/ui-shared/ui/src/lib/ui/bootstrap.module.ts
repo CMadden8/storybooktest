@@ -1,7 +1,8 @@
 import { HttpBackend, HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { ServiceA, ServiceB } from '@org/ui-shared/util';
 import { MultiTranslateHttpLoader } from 'ngx-translate-multi-http-loader';
 
 export function HttpLoaderFactory(httpBackend: HttpBackend) {
@@ -23,5 +24,14 @@ export function HttpLoaderFactory(httpBackend: HttpBackend) {
       },
     }),
   ],
+  providers: [
+    {
+      provide: APP_INITIALIZER,
+      useFactory: (serviceA: ServiceA) => () =>
+        serviceA.run(),
+      deps: [ServiceB],
+      multi: true,
+    },
+  ]
 })
 export class BootstrapModule {}

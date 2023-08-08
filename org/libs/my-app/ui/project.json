@@ -24,8 +24,6 @@
         "browserTarget": "my-app-ui:build-storybook",
         "compodoc": false,
         "assets": [
-          "apps/my-app/src/favicon.ico", 
-          "apps/my-app/src/assets",
           {
             "glob": "**/*",
             "input": "libs/translations-shared/src/lib/assets/il8n/",
@@ -48,8 +46,6 @@
         "browserTarget": "my-app-ui:build-storybook",
         "compodoc": false,
         "assets": [
-          "apps/my-app/src/favicon.ico", 
-          "apps/my-app/src/assets",
           {
             "glob": "**/*",
             "input": "libs/translations-shared/src/lib/assets/il8n/",
