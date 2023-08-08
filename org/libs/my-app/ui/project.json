@@ -15,6 +15,71 @@
           "libs/my-app/ui/**/*.html"
         ]
       }
+    },
+    "storybook": {
+      "executor": "@storybook/angular:start-storybook",
+      "options": {
+        "port": 4400,
+        "configDir": "libs/my-app/ui/.storybook",
+        "browserTarget": "my-app-ui:build-storybook",
+        "compodoc": false,
+        "assets": [
+          "apps/my-app/src/favicon.ico", 
+          "apps/my-app/src/assets",
+          {
+            "glob": "**/*",
+            "input": "libs/translations-shared/src/lib/assets/il8n/",
+            "output": "./assets/i18n/shared"
+          }
+        ]
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "build-storybook": {
+      "executor": "@storybook/angular:build-storybook",
+      "outputs": ["{options.outputDir}"],
+      "options": {
+        "outputDir": "dist/storybook/my-app-ui",
+        "configDir": "libs/my-app/ui/.storybook",
+        "browserTarget": "my-app-ui:build-storybook",
+        "compodoc": false,
+        "assets": [
+          "apps/my-app/src/favicon.ico", 
+          "apps/my-app/src/assets",
+          {
+            "glob": "**/*",
+            "input": "libs/translations-shared/src/lib/assets/il8n/",
+            "output": "./assets/i18n/shared"
+          }
+        ]
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "test-storybook": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "test-storybook -c libs/my-app/ui/.storybook --url=http://localhost:4400"
+      }
+    },
+    "static-storybook": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "my-app-ui:build-storybook",
+        "staticFilePath": "dist/storybook/my-app-ui"
+      },
+      "configurations": {
+        "ci": {
+          "buildTarget": "my-app-ui:build-storybook:ci"
+        }
+      }
     }
   }
 }
