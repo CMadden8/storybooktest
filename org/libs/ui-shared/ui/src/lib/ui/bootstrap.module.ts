@@ -7,7 +7,7 @@ import { MultiTranslateHttpLoader } from 'ngx-translate-multi-http-loader';
 export function HttpLoaderFactory(httpBackend: HttpBackend) {
   return new MultiTranslateHttpLoader(httpBackend, [
     './assets/il8n/',
-    './assets/il8n/shared/',
+    './assets/i18n/shared/',
   ]);
 }
 

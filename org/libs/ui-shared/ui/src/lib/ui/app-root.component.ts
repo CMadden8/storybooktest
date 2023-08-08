@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   standalone: true,
@@ -8,4 +9,8 @@ import { TranslateModule } from '@ngx-translate/core';
   imports: [TranslateModule]
 })
 export class AppRootComponent {
+  constructor(translate: TranslateService) {
+    translate.setDefaultLang('en');
+    translate.use('en');
+  }
 }
